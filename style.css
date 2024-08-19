@@ -1,0 +1,796 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background-color: #959695;    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.menu, .header-content {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté encima del video */
+}
+
+.menu {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu.scrolled {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    height: 60px;
+}
+
+.menu-icon-label {
+    display: none; /* Asegura que el label sea visible en pantallas pequeñas */
+    cursor: pointer;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: darkgreen; /* Color del icono */
+}
+
+/* Oculta el menú de navegación por defecto */
+.navbar {
+    display: flex;
+}
+
+/* Muestra el menú cuando el checkbox está marcado */
+.menu-toggle:checked ~ .navbar {
+    display: flex; /* Muestra el menú cuando el checkbox está marcado */
+    flex-direction: column;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.navbar ul li {
+    width: 100%;
+}
+
+.navbar ul li a {
+    font-size: 18px;
+    padding: 15px;
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: darkgreen;
+}
+
+.menu-toggle {
+    display: none; /* Oculta el checkbox */
+}
+
+.menu:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.header-txt {
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: bold;
+}
+
+.header-txt h1, .header-txt span, .header-txt h3 {
+    font-size: 110px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    color: darkgreen;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.header-txt span {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header-txt p {
+    color: #333333;
+    padding: 0 250px;
+    margin: 25px 0;
+    font-weight: bold;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: darkgreen;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: "Bebas Neue", cursive;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn-1:hover{
+    background-color: rgb(223, 92, 4);
+}
+
+/* Asegúrate de que las secciones donde se muestra el video tengan posición relativa */
+.header, .welcome-1, .prices-2, .footer-bg {
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.header-txt, .welcome-2, .services, .prices-1, .personal-txt {
+    text-align: center; /* centraliza el texto dentro del boton  */
+}
+
+.header-txt .btn-1, .welcome-2 .btn-1, .services .btn-1, .prices .btn-1, .personal .btn-1 {
+    margin: 20px auto;   /* Botones de centrado con margen automático */
+}
+
+.header-dir{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dir h3{
+    font-size: 18px;
+    color: #333333;
+}
+
+.dir p{
+    font-size: 22 px;
+    color: #333333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.welcome {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    height: 100vh; /* Ajusta la altura total del contenedor */
+    margin: 0; /* Elimina los márgenes */
+}
+
+.welcome-1{    
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.welcome-video{
+    width: 100%;
+    height: 100%;         
+    object-fit: cover;    /*ajusta el video para que cubra el area del contenedor*/
+    position: absolute;
+    top: 0;
+    left: 0;   
+}
+
+.welcome-2{
+    width: 50%;
+    padding: 99px;
+    background-color: darkgreen;
+    color: #ffffff;
+    box-sizing: border-box;  /*incluye padding y border en el tamaño total del elemento*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    text-align: center;
+}
+
+h2{
+    font-size: 50px;
+    line-height: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive ;
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: 14px;
+    color: #73ee92;
+    margin: 15px 0;
+}
+
+.b1{
+    color: rgb(247, 252, 247);
+}
+
+.services{
+    padding: 50px 0;
+    text-align: center;
+    background-color:#959695;
+}
+
+.services h2 {
+    font-size: 50px;
+    line-height: 60px;
+    color:  #1b1b1b;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+}
+
+.services p {
+    font-size: 16px; /* Aumentado para mejor legibilidad */
+    color: #1b1b1b;
+    margin: 15px 0;
+    max-width: 800px; /* Limita el ancho del párrafo para mejor lectura */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-group {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+    justify-content: center; /* Centra los elementos en la fila */
+    gap: 20px; /* Espacio entre los elementos */
+    margin-top: 30px;
+}
+
+.services-1 {
+    background-color: #ffffff; /* Color de fondo ajustado */
+    color: #289128; /* Color del texto */
+    padding: 20px;
+    margin: 10px; /* Espacio entre las tarjetas */
+    border-radius: 15px;
+    width: calc(33.333% - 20px); /* Tres columnas con espacio entre ellas */
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.services-1:hover {
+    background-color: #004d00; /* Color de fondo en hover */
+    color: white;
+    
+}
+
+.services-1 h3 {
+    font-size: 24px; /* Tamaño de fuente para los títulos */
+    margin: 10px 0;
+    transition:  color 0.3s ease, transform 0.3s ease;
+}
+
+.services-1 h3:hover{
+    color: #ffffff;
+    transform: scale(1.05);  /*aumenta ligeramente el tamaño en hover*/
+}
+
+.services-1 p {
+    font-size: 14px; /* Tamaño de fuente para los párrafos */
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.services-1 p:hover{
+    color: #ffffff;
+}
+
+.services-1 a {
+    color: #7bff00; /* Color del enlace */
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.services-1 a:hover {
+    text-decoration: underline;
+}
+
+.icono{
+    font-size: 2rem;       /*ajusta el tamaño del icono*/
+    color: #7bff00;
+    margin-bottom: 10px;  /*espaciado inferior*/
+}
+
+hr {
+    border: 1px solid darkgreen; /* Color de la línea del separador */
+    width: 800px;
+    margin: 15px auto; /* Centrando la línea del separador */
+}
+
+.prices{
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    padding: 25px;
+    background-color: darkgreen;
+    margin: 0 auto;
+    max-width: 1200px;
+
+}
+
+.prices-1{
+    width: 100%;
+    padding: 20px;
+
+}
+
+.prices-1 p{
+    color:  #c8f1c9;
+}
+
+.price-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.price-card {
+    background: #c8f1c9;
+    border: 2px solid darkgreen;
+    border-radius: 50%;
+    padding: 15px;
+    width: 260px; /* Ajusta el tamaño de las tarjetas */
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.price-card h3 , .price-card p, .price-card a{
+    font-size: 16px;
+    color:  #1b1b1b;
+}
+
+.price-card h3:hover{
+    color: darkgreen;
+    transform: scale(1.15);  /*aumenta ligeramente el tamaño en hover*/
+}
+.price-card p:hover{
+    color: darkgreen;
+    transform: scale(1.15);  /*aumenta ligeramente el tamaño en hover*/
+    
+}
+
+.price-card a{
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.price-card a:hover{
+    text-decoration: underline;
+}
+
+.prices-2{
+    width: 100%;
+    position: relative;
+    height: 50vh;       /*esto ajusta la altura segun sea necesario*/
+    overflow: hidden;  /*asegura que el contenido no se desborde*/
+    padding: 0;
+}
+
+.prices-2 .background-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /*para que cubra toda la area sin distorsionar*/
+    z-index: -1;        /* para que quede el video detras del contenido*/
+}
+
+.personal{
+    padding: 50px 15px;
+    text-align: center;
+    background-color: #c4c4c4;
+    max-width: 1200px;    /*limita el ancho maximo para centrar la seccion*/
+    margin: 0 auto;      /*centra la seccion en el contendedor*/
+}
+
+.personal .personal-txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.personal .personal-txt h2 {
+    font-size: 36px; /* Ajusta el tamaño del encabezado */
+    color: darkgreen; /* Cambia el color del texto a blanco para mayor contraste */
+}
+
+.personal .personal-txt p {
+    font-size: 16px; /* Ajusta el tamaño del texto del párrafo */
+    color: darkgreen; /* Cambia el color del texto para que contraste mejor con el fondo */
+    max-width: 800px; /* Limita el ancho del párrafo para que no se extienda demasiado en pantallas grandes */
+    margin: 0 auto; /* Centra el párrafo */
+}
+
+.personal .personal-group{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+    flex-wrap: wrap;  /*ára que se ajuste los elementos a pantallas mas chicas*/
+}
+
+.personal-1{
+    text-align: center;
+    margin: 0 10 px;   /*espacio entre elementos*/
+    max-width: 280px;  /*limita el tamaño del bloque*/
+    padding: 15px; /* Agrega padding para mejor separación interna */
+    background-color: darkgreen; /* Opcional: color de fondo blanco para mejorar contraste */
+    border-radius: 10px; /* Opcional: redondea las esquinas del bloque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: agrega sombra sutil */
+}
+
+.personal-1 img{
+    width: 120px;
+    height: 120px;         /*hace que la img sea cuadrada*/
+    border-radius: 50%;    /*hace que la img sea circular*/
+    object-fit: cover;     /*mantienen la proporcion de la img dentro del circulo*/
+    border: 3px solid darkgreen;
+    margin-bottom: 10px;   /*espacio debajo de la imagen*/
+}
+
+.personal-1 h3{
+    font-size: 22px;
+    color:  #1b1b1b;
+    font-weight: bold;
+}
+
+.personal-1 p{
+    padding: 0 10px;
+    color: #e0e0e0;
+}
+
+.personal-1 a{
+    color:#7bff00;
+    text-decoration: none;
+}
+
+.personal-1 a:hover{
+    text-decoration: underline;
+}
+
+.footer-bg{
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;  /* esto asegura que el contenido no se desborde*/
+}
+
+.footer-bg .background-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*esto asegura  que el video cubra el area sin distorsionar*/
+    filter: grayscale(100%);
+    z-index: -1; /*esto asegura que el video este detras del contenido*/
+}
+
+.footer-bg h2{
+    color: darkgreen;
+}
+
+.footer-txt{
+    position: relative;
+    z-index: 1; /* esto asegura que el texto este encima del video*/
+    padding: 10px;
+    color: #ffffff; /*Ajusta el color del texto para que sea legible sobre el video*/
+    text-align: center;
+    background-color: darkgreen;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* .campo-1{
+    margin-bottom: 15px;
+} */
+
+.campo{
+    margin-bottom: 15px;
+    padding: 15px;
+    width: 350px;
+    max-width: 900px;
+    background-color: darkgreen;
+    border: 1px solid darkgreen;
+    outline: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    /* width: 520px !important; */
+    width: 100%;
+    padding: 20px;
+    font-size: 14px;
+}
+/* Estilos para pantallas grandes */
+@media(min-width: 992px) {
+    /* Ocultar el icono de menú en pantallas grandes */
+    .menu-icon-label {
+        display: none;
+    }
+
+    /* Mostrar el menú de navegación en pantallas grandes */
+    .navbar {
+        display: flex; /* Asegúrate de que el menú esté visible */
+        flex-direction: row;
+         width: 100%; /* Asegura que la navbar ocupe el 100% del ancho disponible */
+        padding: 0; /* Elimina el padding para que no haya espacios */
+        margin: 0; /* Elimina el margin para evitar espacios */
+    }
+
+    .navbar ul {
+        display: flex;
+        width: 100%; /* Asegura que el ul ocupe el 100% del ancho disponible */
+        justify-content: center; /* Centra las opciones en el centro si deseas */
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar ul li {
+        margin: 0;
+    }
+
+    .navbar ul li a {
+        padding: 20px; /* Ajusta el padding si es necesario */
+        color:#ffffff;
+        font-size: 18px;
+    }
+
+    /* Ocultar el menú toggle en pantallas grandes */
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media(max-width: 991px) {
+    .menu {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Mostrar el icono de menú en pantallas pequeñas */
+    .menu-icon-label {
+        display: block;
+        cursor: pointer;
+        color: #ffffff;
+    }
+
+    /* Menú oculto por defecto en pantallas pequeñas */
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        flex-direction: column;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Mostrar el menú cuando el checkbox está marcado */
+    .menu-toggle:checked ~ .navbar {
+        display: flex;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    /* Ajustes en el contenido del header para pantallas pequeñas */
+    .header {
+        min-height: 0;
+    }
+
+    .header-content {
+        padding: 80px 30px 50px 30px;
+    }
+
+    .header-txt {
+        margin-bottom: 15px;
+    }
+
+    .header-txt h1 {
+        font-size: 90px;
+    }
+
+    .header-txt p {
+        padding: 0;
+        margin: 15px 0;
+    }
+
+    .header-dir {
+        flex-direction: column;
+    }
+
+    .dir p {
+        font-size: 18px;
+    }
+
+    /* Ajustes específicos para otras secciones en pantallas pequeñas */
+    .welcome {
+        flex-direction: column;
+    }
+
+    .welcome-1 {
+        display: none;
+    }
+
+    .welcome-2 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    p {
+        margin: 15px 0;
+    }
+
+    .services {
+        padding: 30px;
+    }
+
+    .services-txt p {
+        padding: 0;
+    }
+
+    .services-group {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .services-1 {
+        margin: 0 0 20px 0;
+    }
+
+    .prices {
+        flex-direction: column;
+    }
+
+    .prices-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    table {
+        margin: 25px 0 0 0;
+    }
+
+    .prices-2 {
+        display: none;
+    }
+
+    .personal {
+        padding: 30px;
+    }
+
+    .personal-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .personal-1 {
+        margin-bottom: 25px;
+    }
+
+    .footer-bg {
+        padding: 30px;
+    }
+
+    textarea {
+        width: 100% !important;
+    }
+}
+
+/* Cambio de fondo al pasar el cursor sobre el menú en pantallas grandes */
+.menu:hover {
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco completo cuando se pasa el cursor */
+}
+
+/* Cambio de fondo al pasar el cursor sobre el menú en pantallas móviles */
+.menu .navbar:hover {
+    background-color: rgba(255, 255, 255, 0); /* Fondo blanco completo cuando se pasa el cursor */
+}
