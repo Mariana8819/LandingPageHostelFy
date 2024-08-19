@@ -522,56 +522,62 @@ hr {
     text-decoration: underline;
 }
 
-.footer-bg{
+.footer-bg {
     text-align: center;
-    padding: 100px 0;
+    padding: 0;
     position: relative;
-    overflow: hidden;  /* esto asegura que el contenido no se desborde*/
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    width: 100%;
+    height: 100vh;
 }
 
-.footer-bg .background-video{
+.footer-bg .background-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /*esto asegura  que el video cubra el area sin distorsionar*/
+    object-fit: cover; /* Asegura que el video cubra el área sin distorsionar */
     filter: grayscale(100%);
-    z-index: -1; /*esto asegura que el video este detras del contenido*/
+    z-index: -1; /* Asegura que el video esté detrás del contenido */
 }
 
-.footer-bg h2{
+.footer-bg h2 {
     color: darkgreen;
+    position: relative;
+    z-index: 1; /* Asegura que el texto esté encima del video */
+    margin: 20px 0; /* Ajusta el margen para centrar el texto verticalmente */
 }
 
-.footer-txt{
+.footer-txt {
     position: relative;
-    z-index: 1; /* esto asegura que el texto este encima del video*/
+    z-index: 1; /* Asegura que el texto esté encima del video */
     padding: 10px;
-    color: #ffffff; /*Ajusta el color del texto para que sea legible sobre el video*/
+    color: #ffffff; /* Ajusta el color del texto para que sea legible sobre el video */
     text-align: center;
     background-color: darkgreen;
 }
 
-form{
+form {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el formulario */
+    /* border-radius: 5px; */
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* .campo-1{
-    margin-bottom: 15px;
-} */
-
-.campo{
+.campo {
     margin-bottom: 15px;
     padding: 15px;
-    width: 350px;
-    max-width: 900px;
+    width: 100%;
+    max-width: 400px; /* Ajusta el ancho máximo del campo */
     background-color: darkgreen;
     border: 1px solid darkgreen;
-    outline: none;
     border-radius: 10px;
     color: #ffffff;
     font-size: 16px;
@@ -579,7 +585,6 @@ form{
 }
 
 textarea {
-    /* width: 520px !important; */
     width: 100%;
     padding: 20px;
     font-size: 14px;
