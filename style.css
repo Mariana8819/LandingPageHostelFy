@@ -172,7 +172,9 @@ html, body {
 
 
 .btn-1:hover{
+    padding: 10px 25px;
     background-color: rgb(223, 92, 4);
+    transition: background-color 0.3s ease;
 }
 
 /* Asegúrate de que las secciones donde se muestra el video tengan posición relativa */
@@ -368,7 +370,8 @@ hr {
     padding: 25px;
     background-color: darkgreen;
     margin: 0 auto;
-    max-width: 1200px;
+    width: 100%;              /*limita el ancho maximo para centrar la seccion*/
+    box-sizing: border-box;   /* Incluye padding y border en el ancho total */
 
 }
 
@@ -404,6 +407,7 @@ hr {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .price-card h3 , .price-card p, .price-card a{
@@ -431,6 +435,13 @@ hr {
     text-decoration: underline;
 }
 
+.price-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta hacia arriba */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 165, 0, 0.5); /* Sombra con un resplandor adicional */
+    border: 3px solid rgba(0, 0, 0, 0.3); /* Añade un borde luminoso */
+    
+}
+
 .prices-2{
     width: 100%;
     position: relative;
@@ -449,12 +460,78 @@ hr {
     z-index: -1;        /* para que quede el video detras del contenido*/
 }
 
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden;
+    margin-bottom: 30px; /* Espacio debajo del video */
+}
+
+.video-background .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Ajusta la opacidad según lo que necesites */
+}
+
+.video-background .video-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4); /* Fondo oscuro semi-transparente para legibilidad */
+    border-radius: 10px;
+    z-index: 1;
+
+}
+
+.video-background .video-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.video-background .video-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.video-background .video-content .btn-1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: darkgreen;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.video-background .video-content .btn-1:hover {
+    background-color: orange;
+}
+
+
 .personal{
+    position: relative;
     padding: 50px 15px;
     text-align: center;
     background-color: #c4c4c4;
-    max-width: 1200px;    /*limita el ancho maximo para centrar la seccion*/
-    margin: 0 auto;      /*centra la seccion en el contendedor*/
+    width: 100%;              /*limita el ancho maximo para centrar la seccion*/
+    box-sizing: border-box;   /* Incluye padding y border en el ancho total */
 }
 
 .personal .personal-txt{
@@ -522,73 +599,167 @@ hr {
     text-decoration: underline;
 }
 
-.footer-bg {
-    text-align: center;
-    padding: 0;
+#contact{
+    /* position: relative;
+    padding: 50px 15px;
+    overflow: hidden;
+    background-color: darkgreen; */
+
     position: relative;
-    overflow: hidden; /* Asegura que el contenido no se desborde */
-    width: 100%;
-    height: 100vh;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    overflow: hidden;
+    margin-bottom: 40px;
 }
 
-.footer-bg .background-video {
+.background-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que el video cubra el área sin distorsionar */
-    filter: grayscale(100%);
-    z-index: -1; /* Asegura que el video esté detrás del contenido */
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+    filter: grayscale(80%);
+    pointer-events: none;
+}
+#contact .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Asegura que el video esté detrás del formulario */
 }
 
-.footer-bg h2 {
-    color: darkgreen;
-    position: relative;
-    z-index: 1; /* Asegura que el texto esté encima del video */
-    margin: 20px 0; /* Ajusta el margen para centrar el texto verticalmente */
+/* Reproducción automática y sin controles */
+#contact .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    filter: grayscale(80%);
+    pointer-events: none;
 }
 
-.footer-txt {
+#contact .contenedor-form{
     position: relative;
-    z-index: 1; /* Asegura que el texto esté encima del video */
-    padding: 10px;
-    color: #ffffff; /* Ajusta el color del texto para que sea legible sobre el video */
-    text-align: center;
-    background-color: darkgreen;
-}
-
-form {
-    position: relative;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px; /* Añadido padding para espaciar el contenido */
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para mejor contraste */
+    border-radius: 15px; /* Esquinas redondeadas */
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el formulario */
-    /* border-radius: 5px; */
-    max-width: 600px;
-    margin: 0 auto;
 }
 
-.campo {
+#contact .titulo-seccion{
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: darkgreen;  
+    text-decoration-color: #d3d3d3;
+    padding-bottom: 3px; /* Añadir algo de espacio entre el texto y el borde */
+}
+
+#contact .contenedor-form .fila{
     margin-bottom: 15px;
-    padding: 15px;
-    width: 100%;
-    max-width: 400px; /* Ajusta el ancho máximo del campo */
-    background-color: darkgreen;
-    border: 1px solid darkgreen;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 16px;
-    box-sizing: border-box;
 }
 
-textarea {
-    width: 100%;
-    padding: 20px;
-    font-size: 14px;
+#contact .contenedor-form .mitad{
+    display: flex;
+    justify-content: space-between;
 }
+#contact .contenedor-form input,
+#contact .contenedor-form textarea{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #919191;
+    outline-color: darkgreen;
+    transition: border-color 0.3s ease;
+    
+}
+
+#contact .contenedor-form .mitad input{
+    width: 48%;
+}
+
+#contact .contenedor-form .input-full{
+    width: 100%;
+}
+
+#contact .btn-enviar{
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 25px;
+    background-color: darkgreen;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: "Bebas Neue", cursive;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    
+        /* display: inline-block;
+        padding: 10px 25px;
+        background-color: darkgreen;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 18px;
+        font-family: "Bebas Neue", cursive;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s ease; */
+    
+}
+
+#contact .btn-enviar:hover{   
+    padding: 10px 25px;
+    background-color: rgb(223, 92, 4);
+    transition: background-color 0.3s ease;
+}
+
+#contact .titulo-seccion{
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: darkgreen;
+    text-decoration: underline 3px; 
+    text-decoration-color: #d3d3d3;
+    padding-bottom: 3px; /* Añadir algo de espacio entre el texto y el borde */
+}
+
+
+footer{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+footer a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    margin: 5px;
+    font-size: 26px;
+}
+
 /* Estilos para pantallas grandes */
 @media(min-width: 992px) {
     /* Ocultar el icono de menú en pantallas grandes */
@@ -626,6 +797,25 @@ textarea {
     /* Ocultar el menú toggle en pantallas grandes */
     .menu-toggle {
         display: none;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-content p {
+        margin: 0;
+    }
+
+    .footer-content .redes {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer-content .redes a {
+        color: #ffffff;
+        font-size: 24px;
     }
 }
 
@@ -741,17 +931,42 @@ textarea {
         padding: 0;
     }
 
+    .services h3 {
+        font-size: 36px; /* Ajusta el tamaño del título */
+        line-height: 44px;
+    }
+
+    .services p {
+        font-size: 14px; /* Ajusta el tamaño del texto del párrafo */
+    }
+
     .services-group {
         flex-direction: column;
         margin: 0;
     }
 
     .services-1 {
-        margin: 0 0 20px 0;
+        width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible */
+        max-width: 500px; /* Limita el ancho máximo para mantener un diseño más compacto */
+        margin: 10px 0; /* Ajusta el espacio entre tarjetas en dispositivos móviles */
+    }
+
+    hr {
+        width: 90%; /* Ajusta el ancho del separador en pantallas pequeñas */
+    }
+
+    .price-card{
+        width: 200px;
+        height: 200px;
+        font-size: 14px;
     }
 
     .prices {
-        flex-direction: column;
+        padding: 15px;
+    }
+
+    .price-cards{
+        gap: 15px;    /*ajusta el espacio entre las cards*/
     }
 
     .prices-1 {
@@ -781,12 +996,29 @@ textarea {
         margin-bottom: 25px;
     }
 
-    .footer-bg {
-        padding: 30px;
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
     }
 
-    textarea {
-        width: 100% !important;
+    .footer-content .redes {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .footer-content .redes a {
+        margin: 0 10px;
+    }   
+
+    .btn-1 {
+        width: 100%; /* Asegura que el botón ocupe el 100% del ancho */
+        background-color: darkgreen;
+        color: #ffffff;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
     }
 }
 
