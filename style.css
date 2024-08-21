@@ -212,10 +212,12 @@ html, body {
 
 .welcome {
     display: flex; 
+    flex-direction: column;
     align-items: center; 
     justify-content: space-between; 
     height: 100vh; /* Ajusta la altura total del contenedor */
     margin: 0; /* Elimina los márgenes */
+    padding: 20px;
 }
 
 .welcome-1{    
@@ -912,6 +914,19 @@ footer a{
         width: 100%;
         padding: 30px;
         text-align: center;
+    }
+
+    .welcome-2 h2 {
+        font-size: 28px; /* Reduce el tamaño del título */
+    }
+
+    .welcome-2 p {
+        font-size: 16px; /* Reduce el tamaño del texto del párrafo */
+    }
+
+    .welcome-2 .btn-1 {
+        font-size: 14px; /* Reduce el tamaño del texto del botón */
+        padding: 8px 16px; /* Ajusta el padding del botón */
     }
 
     h2 {
